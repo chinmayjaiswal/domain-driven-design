@@ -16,4 +16,12 @@ public class Price {
   public BigDecimal getAmount() {
     return amount;
   }
+
+  @Override
+  public String toString() {
+    return "Price{" +
+        "amount=" + amount +
+        ", currency=" + currency +
+        '}';
+  }
 }

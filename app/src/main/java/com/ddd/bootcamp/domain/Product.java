@@ -18,4 +18,12 @@ public class Product {
   public Price getPrice() {
     return price;
   }
+
+  @Override
+  public String toString() {
+    return "Product{" +
+        "name='" + name + '\'' +
+        ", price=" + price +
+        '}';
+  }
 }

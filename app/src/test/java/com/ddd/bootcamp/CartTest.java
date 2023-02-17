@@ -5,6 +5,7 @@ import com.ddd.bootcamp.domain.Cart;
 import com.ddd.bootcamp.domain.CartItem;
 import com.ddd.bootcamp.domain.DiscountService;
 import com.ddd.bootcamp.domain.ItemDoesNotExistsException;
+import com.ddd.bootcamp.domain.Order;
 import com.ddd.bootcamp.domain.Price;
 import com.ddd.bootcamp.domain.Product;
 import java.math.BigDecimal;
@@ -106,5 +107,20 @@ class CartTest {
         new Price(discountService.getDiscountedAmount("Sony Wireless Headphone", BigDecimal.valueOf(10L)), USD));
     Assertions.assertThat(headPhone.getPrice().getAmount()).isEqualTo(BigDecimal.valueOf(9.0));
 
+  }
+
+  @Test
+  void shouldCreateOrderWhenCartIsCheckedOut() {
+    Cart cart = new Cart();
+
+    CartItem item1 = new CartItem(new Product("Sony Wireless headphone", new Price(BigDecimal.TEN, USD)), 2);
+    cart.addItem(item1);
+
+    Order order = cart.checkout();
+
+    Assertions.assertThat(order.getProducts().size()).isEqualTo(2);
+    Assertions.assertThat(cart.getStatus()).isEqualTo("CHECKED_OUT");
+
+    System.out.println(order.getProducts());
   }
 }
