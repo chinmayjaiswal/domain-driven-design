@@ -14,9 +14,17 @@ public class Customer {
 
   public void updateAddress(Address address) {
     this.address = address;
+    bankAccounts.stream().forEach(account -> {
+
+      account.updateAddress(address);
+    });
   }
 
   public Address getAddress() {
     return address;
+  }
+
+  public List<Account> getBankAccounts() {
+    return bankAccounts;
   }
 }
