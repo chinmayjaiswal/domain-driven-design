@@ -1,6 +1,10 @@
 package com.ddd.bootcamp;
 
 
+import com.ddd.bootcamp.domain.Cart;
+import com.ddd.bootcamp.domain.CartItem;
+import com.ddd.bootcamp.domain.ItemDoesNotExistsException;
+import com.ddd.bootcamp.domain.Product;
 import org.assertj.core.api.Assertions;
 import org.junit.jupiter.api.Test;
 

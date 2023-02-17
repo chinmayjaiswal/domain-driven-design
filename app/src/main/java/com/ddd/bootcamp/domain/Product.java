@@ -1,4 +1,4 @@
-package com.ddd.bootcamp;
+package com.ddd.bootcamp.domain;
 
 public class Product {
 

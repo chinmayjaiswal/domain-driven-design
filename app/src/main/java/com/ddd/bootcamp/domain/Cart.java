@@ -1,4 +1,4 @@
-package com.ddd.bootcamp;
+package com.ddd.bootcamp.domain;
 
 import java.util.ArrayList;
 import java.util.List;
