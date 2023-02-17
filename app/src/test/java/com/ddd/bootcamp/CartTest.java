@@ -73,4 +73,16 @@ class CartTest {
     cart.remove(applePencilItem);
     Assertions.assertThat(cart.hasItem(applePencilItem)).isFalse();
   }
+
+  @Test
+  void shouldDifferenciateBetweenCarts() {
+
+    Cart cart1 = new Cart();
+    Cart cart2 = new Cart();
+    CartItem item1 = new CartItem(new Product("Sony Wireless headphone"), 1);
+    CartItem item2 = new CartItem(new Product("Sony Wireless headphone"), 1);
+    cart1.addItem(item1);
+    cart2.addItem(item2);
+    Assertions.assertThat(cart1).isNotEqualTo(cart2);
+  }
 }
